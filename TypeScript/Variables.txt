@@ -1,0 +1,168 @@
+Tipos de datos y subtipos
+Todos los tipos en TypeScript son subtipos de un único tipo principal denominado tipo any. Any es un tipo que representa cualquier valor de JavaScript sin restricciones.
+
+ts Tipos de datos 
+
+
+
+Any: Puede ser de cualquier tipo y su uso está justificado cuando no tenemos información a priori de qué tipo de dato se trata. Este tipo de definición es propia de TypeScript. 
+
+Sintaxis: 
+
+Todos los demás tipos se clasifican como primitivos, de objeto o parámetros. Estos tipos presentan diversas restricciones estáticas en sus valores.
+
+ts: clasifican como primitivos
+
+Overview of types in TypeScript - Learn. (s. f.). Microsoft Docs. Recuperado 11 de octubre de 2021, de https://docs.microsoft.com/en-us/learn/modules/typescript-declare-variable-types/2-types-overview
+
+
+Tipos de datos primitivos
+Los tipos primitivos son: boolean, number, string, void, null, undefined y enum.
+
+string: Representa valores de cadena de caracteres (letras);
+Sintaxis: ts primitivo string
+
+
+TypeScript permite también usar plantillas de cadenas con las que podemos intercalar texto con otras variables:  ${ expr }
+
+Ejemplo: 
+
+ts primitivo codigo
+
+number: Representa valores numéricos, como enteros (int) o decimales (float).
+
+ Sintaxis: ts primitivo numero
+
+boolean: Es un tipo de variable que puede tener solo dos valores, Verdadero (true) o Falso (false).
+
+ Sintaxis: ts sintaxis bool
+
+
+
+Void: El tipo void existe únicamente para indicar la ausencia de un valor, como por ejemplo en una función que no devuelve ningún valor.
+Sintaxis: ts void
+
+Enum: Las enumeraciones ofrecen una manera sencilla de trabajar con conjuntos de constantes relacionadas. Un elemento enum es un nombre simbólico para un conjunto de valores. Las enumeraciones se tratan como tipos de datos y se pueden usar a fin de crear conjuntos de constantes para su uso con variables y propiedades.
+ 
+
+Siempre que un procedimiento acepte un conjunto limitado de variables, considere la posibilidad de usar una enumeración. Las enumeraciones hacen que el código sea más claro y legible, especialmente cuando se usan nombres significativos” (referencia)
+
+Ejemplo:
+ts Enum
+
+
+Para observar el fuente, lo que imprime la consola y el fuente javascript generado, hacer clic aquí.
+
+ts sitio traspilar 1
+
+Ejemplo del tipo enum en Typescript y su transpilación a Javascript
+
+El sitio typescriptlang.org/play nos provee una herramienta para ver la transpilación a javascript e incluso ejecutarla. Para ello, simplemente hacer clic en Ejecutar:
+
+ts sitio traspilar 2
+
+Ejecución de Typescript con la herramienta
+
+Como puedes observar en las anteriores imagenes, tras ejecutar nuestro enum en typescript y transpilarlo a javascript, este se transforma el tipo enum (typescript)  a una función  (javascript) y devuelve un nro.  que va desde 0 en adelante, de acuerdo a la opción elegida.
+
+
+
+Tipos de objetos
+Los tipos de objeto son todos los tipos de clase, de interfaz, de arreglos y literales.
+
+Nota: Los tipos de clase e interfaz se abordarán más adelante en este mismo módulo.
+
+ 
+
+Array: Es un tipo de colección o grupos de datos (vectores, matrices).  El agrupamiento lleva como antecesor el tipo de datos que contendrá el arreglo.
+
+Sintaxis: ts arrays
+
+Generic.: También puedes definir tipos genéricos como sigue
+
+sintaxis: 
+
+Los genéricos son como una especie de plantillas mediante los cuales podemos  aplicar un tipo de datos determinado a varios puntos de nuestro código. Sirven para aprovechar código, sin tener que duplicarlo por causa de cambios de tipo y evitando la necesidad de usar el tipo "any" (referencia).
+
+Los mismos se indican entre “mayores y menores” y pueden ser de cualquier tipo incluso clases e interfaces.
+
+Veamos el ejemplo que nos provee la fuente oficial de typescript:
+
+
+Si tenemos la siguiente función:
+
+ts funcion generic
+
+Pero, necesitamos que la misma sea válida para otros tipos de datos entonces podríamos cambiar el tipo number por any :
+
+ts genric 2
+
+ Sin embargo, el tipo any permite cualquier tipo de valor por lo que la función podría recibir un tipo number y devolver otro. Entonces, estamos perdiendo información sobre el tipo que debe devolver la función. Para solucionarlo, y obligar al compilador que respete el mismo tipo (parámetros de entrada y salida) podemos utilizar genéricos.
+
+ts generic 3
+
+Observa que cambiamos any por la letra T.
+
+T nos permite capturar el tipo de datos por lo que el tipo utilizado para el argumento es el mismo que el tipo de retorno.
+
+
+
+Object: Es un tipo de dato que engloba a la mayoría de los tipos no primitivos.
+ts Object
+Desestructuración: La desestructuración permite acceder a los valores de un array o un objeto.
+ Ejemplo - desestructuración de un objeto: 
+
+ts Desaturación del objeto
+
+Ejemplo - desestructuración de un array:
+
+
+
+ ts arrays
+
+Ejemplo - desestructuración con estructuración:
+
+desestructuración con estructuración
+
+ Observa que la sintaxis ...rest, nos permite agregar más parámetros. En este caso el resultado en consola será: [3, 5]
+
+Puedes comprobar el fuente aquí (clic en Ejecutar para observar lo que muestra en pantalla console.log)
+
+Estructuración:  Como se pudo observar en el apartado anterior, la estructuración facilita que una variable del tipo array reciba una gran cantidad de parámetros.
+
+Ejemplo en funciones:
+
+ts desestructuracion funciones
+
+Observa que la sintaxis ...allOthers nos permite pasar más parámetros.
+
+Luego, al llamar a la función con los siguientes parámetros:
+
+
+
+
+ Tipos null y undefined
+
+“Los tipos null y undefined son subtipos de todos los demás tipos. No es posible hacer referencia explícita a los tipos null y undefined. Solo se puede hacer referencia a los valores de esos tipos mediante los literales null y undefined” (referencia).
+
+Aserción de tipos (As)
+Una aserción de tipos le indica al compilador "confía en mí, sé lo que estoy haciendo". Se parece al casting en otros lenguajes de programación pero no tiene impacto en tiempo de ejecución sino que le dice al compilador el tipo de datos en cuestión a fin de acceder a los métodos, propiedades, etc. del tipo de datos en tiempo de desarrollo.
+
+ Sintaxis (dos posibles):
+
+
+Aserción de tipos
+
+
+ 
+
+Funciones
+Una función es un conjunto de instrucciones o sentencias que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente y se caracterizan porque:
+
+●      deben ser invocadas por su nombre.
+●      permiten simplificar el código haciendo más legible y reutilizable.
+ La declaración de una función consiste en:
+
+●       Un nombre
+●       Una lista de parámetros o argumentos encerrados entre paréntesis.
+●       Conjunto de sentencias o instrucciones encerradas entre llaves.

@@ -1,0 +1,10 @@
+BUSQUEDA
+
+Array.filter() es un filtro que nos devuelve los elementos en base a una condicion.
+
+Array.find() nos devuelve el primer elemento que cuampla una condicion. 
+
+Array.includes() nos devuelve un boleano en base si incluye un determinado valor 
+
+Array.indexOf() nos devuelve la posicion de un elemento, y si no la encuentra devuelve un -1
+

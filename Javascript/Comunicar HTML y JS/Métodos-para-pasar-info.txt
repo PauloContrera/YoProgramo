@@ -1,0 +1,31 @@
+Los métodos son acciones que se pueden realizar a los elementos HTML mediante DOM.
+
+Los más comunes son los  utilizados para encontrar elementos: 
+
+    1Encontrar elementos HTML por ID (getElementById)
+
+    2Encontrar elementos HTML por nombre de etiqueta (getElementsByTagName)
+
+    3Encontrar elementos HTML por nombre de clase (getElementsByClassName)
+
+    4Encontrar elementos HTML mediante selectores CSS (querySelectorAll)
+
+
+Este ejemplo encuentra el elemento con id="intro":
+
+    const element = document.getElementById("intro");
+
+
+Este ejemplo encuentra todos los <p>elementos:
+
+    const element = document.getElementsByTagName("p");
+
+
+Este ejemplo devuelve una lista de todos los elementos con class="intro".
+
+    const x = document.getElementsByClassName("intro");
+
+
+Este ejemplo devuelve una lista de todos los elementos  <p> con class="intro".
+
+    const x = document.querySelectorAll("p.intro");

@@ -1,0 +1,41 @@
+Reglas de sintaxis JSON:
+
+- Los datos están en pares de nombre / valor
+- Los datos están separados por comas
+- Las llaves sostienen objetos
+- Los corchetes sostienen matrices
+
+Los datos en JSON: un nombre y un valor
+
+Los datos JSON se escriben como pares de nombre / valor, al igual que las propiedades de los objetos de JavaScript. Un
+par de nombre / valor consta de un nombre de campo (entre comillas dobles), seguido de dos puntos, seguido de un valor:
+
+"firstName":"Juana"
+
+
+Los Objetos en JSON:
+
+Los objetos JSON se escriben entre llaves. Al igual que en JavaScript, los objetos pueden contener varios pares de
+nombre / valor:
+
+{"firstName":"Juana", "lastName":"Fernandez"}
+
+
+
+Las Matrices en JSON
+
+Las matrices JSON se escriben entre corchetes. Al igual que en JavaScript, una matriz puede contener objetos, te dejamos
+un ejemplo de una matriz Empleado con 3 Objetos:
+
+"employees":[
+{"firstName":"Juana", "lastName":"Fernandez"},
+{"firstName":"Ana", "lastName":"Rntani"},
+{"firstName":"Francisco", "lastName":"Petrol"}
+]
+
+
+
+Validar formato JSON:
+
+Existen muchas páginas para validar formato, te dejamos una para empezar, cada vez que trabajes con un formato JSON
+siempre debes estar seguro si el formato esta correcto y es válido, para ir a la página has clic aquí
