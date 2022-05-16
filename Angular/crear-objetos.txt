@@ -1,0 +1,38 @@
+Para crear un módulo propio, además del módulo principal que se genera al crear un proyecto(app.module.ts) se deben
+seguir los siguientes pasos:
+
+    1 Ir a la consola o línea de comandos desde la terminal que resulte más cómoda
+    2 Ejecutar el comando: ng generate module < nombre - modulo > o su abreviado: ng g m < nombre - modulo >
+
+    Una vez ejecutado el comando, AngularCLI creará un subdirectorio con el nombre del módulo dentro de la carpeta "src/app"
+y un archivo: nombre - modulo.module.ts.
+
+Angular CLI aplica las convenciones de nombres más adecuadas y como los módulos son clases, internamente les
+coloca en el código la primera letra siempre en mayúscula.
+
+            Anatomía de un módulo
+Cuando creamos un módulo, los primero que veremos es algo como la siguiente imagen:
+
+Como se puede observar, Angular define los módulos como clases, a través del decorador @NgModule.En el mismo, contiene dos arrays bien definidos:
+
+        imports: Clases exportadas importaciones necesarias.Le dice a Angular sobre otros NgModules que este módulo en particular necesita para funcionar correctamente(https: //docs.angular.lat/guide/bootstrapping )
+
+        declarations: Aquí se listan los componentes u otros artefactos que incluye este módulo.
+
+    Pudiendo además, agregarse lo siguientes:
+
+        providers: Enumera los proveedores de servicios necesarios.
+
+        bootstrap: El componente raíz que Angular crea e inserta en la página web de host index.html(https: //docs.angular.lat/guide/bootstrapping )
+
+        exports: Aquí se listan los componentes exportados hacia afuera del módulo.
+
+
+En el siguiente ejemplo, inicia el módulo con AppComponente y se declara el uso de otro módulo más, LoginComponent.Además este módulo requiere del uso de otros 3 módulos para funcionar:
+
+            <--------------ver imagen modulo 2------->
+
+                        ¿Quién inicia el módulo ?
+La aplicación arranca en el main.ts donde se le pasa el primer módulo al sistema para que luego se propague la ejecución cargando los demás módulos.
+
+Para más información, consultar la documentación oficial: https: //angular.io/api/core/NgModule y  https://angular.io/guide/ngmodules
